@@ -1,7 +1,7 @@
 package menu
 
 //import (
-//	"51baibao.com/dazuien/wcpa/manager/test"
+//	"github.com/1851616111/wcpa/pkg_old/manager/test"
 //	"testing"
 //)
 

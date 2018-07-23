@@ -1,7 +1,7 @@
 package user
 
 //import (
-//	tt "51baibao.com/dazuien/wcpa/manager/test"
+//	tt "github.com/1851616111/wcpa/pkg_old/manager/test"
 //	"testing"
 //)
 

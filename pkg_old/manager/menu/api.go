@@ -3,7 +3,7 @@ package menu
 import (
 	"encoding/json"
 	"github.com/1851616111/util/http"
-	"51baibao.com/dazuien/wcpa/errors"
+	"github.com/1851616111/wcpa/pkg_old/errors"
 )
 
 const NewMenuURL = "https://api.weixin.qq.com/cgi-bin/menu/create"

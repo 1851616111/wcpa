@@ -1,6 +1,6 @@
 package user
 
-import "51baibao.com/dazuien/wcpa/errors"
+import "github.com/1851616111/wcpa/pkg_old/errors"
 
 //details https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842&token=&lang=zh_CN
 //subscribe	用户是否订阅该公众号标识，值为0时，代表此用户没有关注该公众号，拉取不到其余信息。

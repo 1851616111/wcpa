@@ -7,9 +7,9 @@ import (
 	"sync"
 
 	httputil "github.com/1851616111/util/http"
-	"51baibao.com/dazuien/wcpa/event"
-	"51baibao.com/dazuien/wcpa/util/sign"
-	token "51baibao.com/dazuien/wcpa/util/user-token"
+	"github.com/1851616111/wcpa/pkg_old/event"
+	"github.com/1851616111/wcpa/pkg_old/util/sign"
+	token "github.com/1851616111/wcpa/pkg_old/util/user-token"
 	"github.com/golang/glog"
 	"github.com/julienschmidt/httprouter"
 )

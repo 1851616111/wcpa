@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	httputil "github.com/1851616111/util/http"
-	errs "51baibao.com/dazuien/wcpa/errors"
+	errs "github.com/1851616111/wcpa/pkg_old/errors"
 	"net/http"
 )
 
