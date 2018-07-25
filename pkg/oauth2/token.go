@@ -3,6 +3,7 @@ package oauth2
 import (
 	"encoding/json"
 	"github.com/1851616111/util/http"
+	"errors"
 )
 
 //docs https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842&token=&lang=zh_CN
@@ -30,12 +31,19 @@ func (c *Config) Exchange(code string) (*Token, error) {
 		return nil, err
 	}
 
-	var token Token
-	if err = json.NewDecoder(rsp.Body).Decode(&token); err != nil {
+	var res struct {
+		*Token
+		*Error
+	}
+	if err := json.NewDecoder(rsp.Body).Decode(&res); err != nil {
 		return nil, err
 	}
 
-	return &token, nil
+	if res.Error != nil {
+		return nil, errors.New(res.Error.Msg)
+	} else {
+		return res.Token, nil
+	}
 }
 
 type Token struct {
@@ -44,4 +52,9 @@ type Token struct {
 	Refresh_Token string `json:"refresh_token"`
 	Open_ID       string `json:"openid"`
 	Scope         string `json:"scope"`
+}
+
+type Error struct {
+	Code int    `json:"errcode"`
+	Msg  string `json:"errmsg"`
 }

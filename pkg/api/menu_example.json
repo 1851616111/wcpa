@@ -1,0 +1,76 @@
+{
+  "is_menu_open": 1,
+  "selfmenu_info": {
+    "button": [{
+      "name": "Eva星球",
+      "sub_button": {
+        "list": [{
+          "type": "view",
+          "name": "儿歌部落",
+          "url": "https:\/\/mp.weixin.qq.com\/mp\/homepage?__biz=MzU4ODMyMTExNA==&hid=2&sn=17a2bf6adaa552c7ee1d6064b65f4a4c&scene=18"
+        }, {
+          "type": "view",
+          "name": "绘本峡谷",
+          "url": "https:\/\/mp.weixin.qq.com\/mp\/homepage?__biz=MzU4ODMyMTExNA==&hid=1&sn=27db1edb85f0d9767bafb4c946b2946a&scene=18"
+        }, {
+          "type": "view",
+          "name": "动画港湾",
+          "url": "https:\/\/mp.weixin.qq.com\/s\/50EHCRqW39WTM1y1Wgo87g"
+        }, {
+          "type": "view",
+          "name": "我不是鸡汤",
+          "url": "https:\/\/mp.weixin.qq.com\/mp\/homepage?__biz=MzU4ODMyMTExNA==&hid=4&sn=988cf27a483461b5e7b28da2642c2c55&scene=18"
+        }]
+      }
+    }, {
+      "name": "见面礼",
+      "sub_button": {
+        "list": [{
+          "type": "view",
+          "name": "8天免费训练营",
+          "url": "https:\/\/dznwyy.51baibao.com\/wx\/?MTAwMDQ3NQ=="
+        }, {
+          "type": "view",
+          "name": "成长时光精品课",
+          "url": "https:\/\/dznwyy.51baibao.com\/wx\/?MTAwMDQ0Ng=="
+        }, {
+          "type": "view",
+          "name": "会员免费课",
+          "url": "https:\/\/dznwyy.51baibao.com\/wx\/?MTAwMDQ3MQ=="
+        }, {
+          "type": "img",
+          "name": "我要报名",
+          "value": "Ho4LM-FX2a1H3G7gccMCj34lN4EXQsWSq2WDqRpuib2eqYGNJ8FRrBpq1XX8tR-V"
+        }]
+      }
+    }, {
+      "name": "我的",
+      "sub_button": {
+        "list": [{
+          "type": "img",
+          "name": "订单开课",
+          "value": "6LtuzGCxGhPmXQ784UZGkHe1krKVyD5ZcDWOi1ovRIcpwrLjUSJ6sg_t3s83C6BU"
+        }, {
+          "type": "img",
+          "name": "联系客服",
+          "value": "azG95Co0_SD_P94xBcTJzVsiEXDsbpWcPCVnxFrQ-sA2zj9LUZw2noQJxcAEr-rt"
+        }, {
+          "type": "news",
+          "name": "关于大嘴妞",
+          "value": "XE0SukUeRkIhGbxSQMOVWyGYHmERIaKLu69Xhqj4W9A",
+          "news_info": {
+            "list": [{
+              "title": "大嘴妞玩英语：让启蒙回归家庭，给孩子开启真正的生活化语言环境",
+              "author": "大嘴妞玩英语的",
+              "digest": "关于大嘴妞玩英语 · 隶属公司 · 旗下产品 · 联系我们",
+              "show_cover": 0,
+              "cover_url": "http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/lWiayKDxr4oBPhib8Jia4y9023ExibC9Z8z6Y70CBFwWA9A8pdUAne1u4exvjIfUQaibsWmDjJMY0Y1w6gf5AHWvkow\/0?wx_fmt=jpeg",
+              "content_url": "http:\/\/mp.weixin.qq.com\/s?__biz=MzUxMzU2MjcxMg==&mid=100000054&idx=1&sn=d0795b2a5109d2f50788232915382bec&chksm=795200014e258917425ea7e51f67a1bc6800c9c706a25faa89714211ba30a3371a0f2332deb4#rd",
+              "source_url": ""
+            }]
+          }
+        }]
+      }
+    }]
+  }
+}
