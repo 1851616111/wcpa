@@ -9,7 +9,38 @@ import (
 	"bytes"
 )
 
-const NewMenuURL = "https://api.weixin.qq.com/cgi-bin/menu/create"
+const (
+	NewMenuURL = "https://api.weixin.qq.com/cgi-bin/menu/create"
+	SelfMenuURL = "https://api.weixin.qq.com/cgi-bin/get_current_selfmenu_info"
+)
+
+func ListMenu(access_token string) ([]Button, error) {
+	//rsp, err := http.Send(&http.HttpSpec{
+	//	URL: SelfMenuURL,
+	//	Method:"GET",
+	//	ContentType: http.ContentType_JSON,
+	//	URLParams:   http.NewParams().Add("access_token", access_token),
+	//})
+	//
+	//var res struct {
+	//	IsMenuOpen int `json:"is_menu_open"`
+	//	SelfMenuInfo struct {
+	//		Button []struct{
+	//			Name string `json:"name"`
+	//			SubButton struct {
+	//				List []struct {
+	//					Type string `json:"type"`
+	//					Name string `json:"name"`
+	//					Url  string `json:"url"`
+	//					Value string `json:"value"`
+	//				} `json:"list"`
+	//			} `json:"sub_button"`
+	//		} `json:"button"`
+	//	} `json:"selfmenu_info"`
+	//}
+
+return nil, nil
+}
 
 func CreateMenu(access_token string, bt ...*Button) error {
 	req := &http.HttpSpec{
@@ -17,7 +48,7 @@ func CreateMenu(access_token string, bt ...*Button) error {
 		Method:      "POST",
 		ContentType: http.ContentType_JSON,
 		URLParams:   http.NewParams().Add("access_token", access_token),
-		BodyParams:  http.NewBody().Add("button", bt),
+		BodyParams:  *http.NewBody().Add("button", bt),
 	}
 
 	rsp, err := http.Send(req)
@@ -86,11 +117,11 @@ func NewViewButton(name, url string) SubButton {
 	}
 }
 
-func NewViewLimitedButton(name, url string) SubButton {
+func NewViewLimitedButton(name, mediaId string) SubButton {
 	return SubButton{
 		Type: buttonTypes[View_Limited],
 		Name: name,
-		URL:  url,
+		MediaId:  mediaId,
 	}
 }
 
