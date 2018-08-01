@@ -5,7 +5,7 @@ import (
 	"encoding/xml"
 )
 
-type Event struct {
+type Message struct {
 	XMLName xml.Name `xml:"xml"`
 
 	To         xmlutil.CDATA `xml:"ToUserName"`
@@ -23,6 +23,13 @@ type Event struct {
 	//ArticleCount int     `xml:"ArticleCount,omitempty"`
 	//articles     string  `xml:"Articles,omitempty"`
 	//Items        *[]item `xml:"Articles>item,omitempty"`
+}
+
+func (e Message) IsEvent() bool {
+	return string(e.MsgType) == "event"
+}
+func (e Message) IsScanEvent() bool {
+	return string(e.Event) == "SCAN"
 }
 
 //扫码事件

@@ -16,7 +16,7 @@ func TestType_Msg(t *testing.T) {
 		<MsgId>6583883461605926895</MsgId>
 	</xml>`
 
-	var e Event
+	var e Message
 	if err := xml.Unmarshal(([]byte)(s), &e); err != nil {
 		t.Fatal(err)
 	}
@@ -35,7 +35,7 @@ func TestType_Event(t *testing.T) {
 		<Ticket><![CDATA[gQEi8DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyWkpCZ3dudjFmSjAxcWV4dWhyYzYAAgSan15bAwT0AQAA]]></Ticket>
 	</xml>`
 
-	var e Event
+	var e Message
 	if err := xml.Unmarshal(([]byte)(s), &e); err != nil {
 		t.Fatal(err)
 	}
