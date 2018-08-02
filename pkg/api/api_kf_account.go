@@ -45,10 +45,7 @@ func CreateKFAccount(access_token string, acc NewKFAccount) error {
 
 	defer rsp.Body.Close()
 
-	var res struct {
-		Code int    `json:"errcode"`
-		Msg  string `json:"errmsg"`
-	}
+	var res Error
 	if err := json.NewDecoder(rsp.Body).Decode(&res); err != nil {
 		return err
 	}
@@ -57,4 +54,41 @@ func CreateKFAccount(access_token string, acc NewKFAccount) error {
 		return errors.New(res.Msg)
 	}
 	return nil
+}
+
+type KFMessage struct {
+	ToUser       string `json:"touser"`
+	MsgType      string `json:"msgtype"`
+	TextMessage  *Text  `json:"text,omitempty"`
+	ImageMessage *Image `json:"image,omitempty"`
+}
+
+type Text struct {
+	Content string `json:"content"`
+}
+type Image struct {
+	MediaId string `json:"media_id"`
+}
+
+func SendKFMessage(access_token string, msg *KFMessage) error {
+	var res Error
+	err := http.NewFetcher(&http.HttpSpec{
+		URL:         "https://api.weixin.qq.com/cgi-bin/message/custom/send",
+		Method:      "POST",
+		ContentType: http.ContentType_JSON,
+		URLParams:   http.NewParams().Add("access_token", access_token),
+		BodyObject:  msg,
+	}).FetchJson(&res)
+	if err != nil {
+		return err
+	}
+	return res.Error()
+}
+
+func SendTextMessage(access_token, to_user, content string) error {
+	return SendKFMessage(access_token, &KFMessage{
+		ToUser:      to_user,
+		MsgType:     "text",
+		TextMessage: &Text{Content: content},
+	})
 }

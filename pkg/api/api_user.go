@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"github.com/1851616111/util/http"
+	"fmt"
 )
 
 type User struct {
@@ -54,4 +55,12 @@ func GetUser(token, openID string) (*User, error) {
 type Error struct {
 	Code int    `json:"errcode"`
 	Msg  string `json:"errmsg"`
+}
+
+func (r Error) Error() error {
+	if r.Code == 0 {
+		return nil
+	} else {
+		return fmt.Errorf("request wx err: %s", r.Msg)
+	}
 }
