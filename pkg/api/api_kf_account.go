@@ -92,3 +92,11 @@ func SendTextMessage(access_token, to_user, content string) error {
 		TextMessage: &Text{Content: content},
 	})
 }
+
+func SendImageMessage(access_token, to_user, media_id string) error {
+	return SendKFMessage(access_token, &KFMessage{
+		ToUser:       to_user,
+		MsgType:      "image",
+		ImageMessage: &Image{MediaId: media_id},
+	})
+}
