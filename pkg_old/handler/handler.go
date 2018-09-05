@@ -55,14 +55,6 @@ func EventAction(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		return
 	}
 
-	if act := EventManager.Handle(&e); act != nil {
-		b, err := xml.Marshal(act)
-		if err != nil {
-			glog.Errorf("encode weichat event action err %v\n", err)
-		}
-
-		w.Write(b)
-	}
 	return
 }
 

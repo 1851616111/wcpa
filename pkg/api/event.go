@@ -32,6 +32,10 @@ func (e Message) IsScanEvent() bool {
 	return string(e.Event) == "SCAN"
 }
 
+func (e Message) IsSubscribe() bool {
+	return string(e.Event) == "subscribe"
+}
+
 //扫码事件
 //<xml>
 //	<ToUserName><![CDATA[gh_b4ec5147c722]]></ToUserName>\n
